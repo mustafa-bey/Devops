@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proje
+  namespace: mth
+  labels:
+    app: proje
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: proje
+  template:
+    metadata:
+      labels:
+        app: proje
+    spec:
+      containers:
+      - name: proje
+        image: mustafatatli63/proje:v1
+        ports:
+        - containerPort: 4000
